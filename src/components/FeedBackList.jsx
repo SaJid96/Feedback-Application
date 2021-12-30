@@ -1,5 +1,6 @@
 import FeedbackItem from './FeedbackItem'
-
+import PropTypes from 'prop-types';
+ 
 const FeedBackList = ({ feedback }) => {
   console.log(feedback);
 
@@ -18,5 +19,14 @@ const FeedBackList = ({ feedback }) => {
     </div>
   );
 };
+
+FeedBackList.propTypes={
+
+  feedback:PropTypes.arrayOf({
+    id:PropTypes.number.isRequired,
+    text:PropTypes.string.isRequired,
+    rating:PropTypes.number.isRequired
+  })
+}
 
 export default FeedBackList;
