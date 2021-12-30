@@ -1,7 +1,7 @@
 import FeedbackItem from './FeedbackItem'
 import PropTypes from 'prop-types';
  
-const FeedBackList = ({ feedback }) => {
+const FeedBackList = ({ feedback,handleDelete }) => {
   console.log(feedback);
 
   if (!feedback || feedback.length === 0) {
@@ -13,7 +13,7 @@ const FeedBackList = ({ feedback }) => {
 
         {feedback.map((item)=>(
 
-               <FeedbackItem key={item.id} item={item} />
+               <FeedbackItem  handleDelete={handleDelete} key={item.id} item={item} />
         ))}
      
     </div>
@@ -22,11 +22,14 @@ const FeedBackList = ({ feedback }) => {
 
 FeedBackList.propTypes={
 
-  feedback:PropTypes.arrayOf({
+  feedback:PropTypes.arrayOf(
+    PropTypes.shape(
+    {
+
     id:PropTypes.number.isRequired,
     text:PropTypes.string.isRequired,
     rating:PropTypes.number.isRequired
   })
-}
+  )}
 
 export default FeedBackList;
