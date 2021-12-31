@@ -7,7 +7,7 @@ import FeedBackList from "./components/FeedBackList";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from './Pages/AboutPage';
-
+import AboutIconLink from './components/AboutIconLink';
 
 function App() {
 
@@ -53,6 +53,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </div>
+        <AboutIconLink/>
       </div>
     </Router>
   );
