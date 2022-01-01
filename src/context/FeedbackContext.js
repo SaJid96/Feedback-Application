@@ -61,15 +61,28 @@ const editfeedback=(item)=>{
   })
 }
 
+// update feedback
+
+const  updateFeedback=(id ,updtItem)=>{
+
+ setFeedback(
+
+      feedback.map((item) =>(item.id === id  ? {...item,...updtItem} :item)
+
+ ))
+}
+
+
 
   return (
     <FeedbackContext.Provider
       value={{
         feedback,
+        feedbackEdit,
         deleteFeedback,
         addedFeedback,
         editfeedback,
-        feedbackEdit,
+        updateFeedback,
       }}
     >
       {children}
