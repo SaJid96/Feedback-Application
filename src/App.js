@@ -1,7 +1,6 @@
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import Header from "./components/Header";
-import FeedbackData from "./data/FeedbackData";
-import {useState} from 'react'
+
 import FeedBackList from "./components/FeedBackList";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
