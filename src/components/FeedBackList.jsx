@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext';
  
-const FeedBackList = ({ handleDelete }) => {
+const FeedBackList = () => {
 
 
 const {feedback} = useContext(FeedbackContext);
@@ -27,7 +27,7 @@ const {feedback} = useContext(FeedbackContext);
 
            >
              <FeedbackItem
-               handleDelete={handleDelete}
+              
                key={item.id}
                item={item}
              />
