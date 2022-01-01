@@ -19,7 +19,7 @@ const FeedbackForm = () => {
   const [message, setMessage] = useState('');
 
 
-  const {addedFeedback}=useContext(FeedbackContext)
+  const { addedFeedback, feedbackEdit } = useContext(FeedbackContext);
 
 
   const handleText = (e) => {
