@@ -25,10 +25,11 @@ const FeedbackForm = () => {
 
   useEffect(()=>{
 
-    setBtndisabled(false)
-    setText(feedbackEdit.item.text)
-    setRating(feedbackEdit.item.rating)
-
+     if (feedbackEdit.edit) {
+       setBtndisabled(false);
+       setText(feedbackEdit.item.text);
+       setRating(feedbackEdit.item.rating);
+     }
 
   },[feedbackEdit])
 
