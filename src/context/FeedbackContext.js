@@ -38,6 +38,20 @@ export const FeedbackProvider = ({ children }) => {
 
     //add feedback
 
+  const addedFeedback = async (newFeedback) => {
+    const response = await fetch('/feedback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newFeedback),
+    });
+
+    const data = await response.json();
+
+    setFeedback([data, ...feedback]);
+  };
+
 
   //delete feedback
     const deleteFeedback = (id) => {
