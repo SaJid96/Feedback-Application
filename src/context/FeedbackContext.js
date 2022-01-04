@@ -76,15 +76,21 @@ const editfeedback=(item)=>{
 }
 
 // update feedback
+const updateFeedback = async (id, updItem) => {
+  const response = await fetch(`/feedback/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updItem),
+  });
 
-const  updateFeedback=(id ,updtItem)=>{
+  const data = await response.json();
 
- setFeedback(
-
-      feedback.map((item) =>(item.id === id  ? {...item,...updtItem} :item)
-
- ))
-}
+  setFeedback(
+    feedback.map((item) => (item.id === id ? { ...item, ...data } : item))
+  );
+};
 
 
 
